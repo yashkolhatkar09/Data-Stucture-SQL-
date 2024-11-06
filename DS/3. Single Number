@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int result = 0;
+
+        for(auto i : nums)
+        {
+            result ^= i;    // A ^ A = 0 
+                            // 0 ^ A = A 
+                            // A ^ B ^ C == (B ^ A) ^ C 
+        }
+        
+        return result;
+    }
+};
