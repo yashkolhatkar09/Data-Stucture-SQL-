@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int addedInteger(vector<int>& nums1, vector<int>& nums2) {
+        int a = INT_MIN, b = INT_MIN;
+
+        for (auto i : nums1) {
+            if (i > a)
+                a = i;
+        }
+
+        for (auto i : nums2) {
+            if (i > b)
+                b = i;
+        }
+
+        return b - a;
+    }
+};
