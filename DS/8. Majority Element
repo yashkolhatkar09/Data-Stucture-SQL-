@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+
+        if (nums.size() <= 2)
+            return nums[0];
+        
+        sort(nums.begin(), nums.end());
+        
+        if (nums.size() == 3)
+            return nums[1];
+
+        int middle = nums.size() / 2;
+
+        if (nums[middle] == nums[middle - 1])
+            return nums[middle];
+
+        else
+            return nums[nums.size() - 1];
+
+        return -1;
+    }
+};
